@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+   
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: rgb(242, 236, 236); 
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #2b2828;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .background-photo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.9; 
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 150px auto; 
+      padding: 20px;
+      background-color: #2d2d2d;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      opacity: 0.9;
+    }
+
+    .dashboard-title {
+      font-size: 24px;
+      margin-bottom: 20px; 
+      color: #fff;
+    }
+  
+    .search-form {
+      background-color: #acacac;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 20px auto;
+    }
+
+    input[type="text"] {
+      width: 98%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    button[type="submit"] {
+      background-color: #525252;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      background-color: #b6b7b6;
+    }
+    .app-description {
+      background-color: rgba(107, 106, 106, 0.2);
+      padding: 8px;
+      width: 98%;
+      border-radius: 5px;
+      color: #fff;
+      text-align: center;
+      margin-top: 15px; 
+    }
+  </style>
+</head>
+<body>
+<img class="background-photo" src="https://wallpaperaccess.com/full/1900445.jpg" alt="Background Photo">
+
+<div class="header">
+  <h1>Welcome to the Dashboard, <%= username %>!</h1> <p1><a href="/login">Home</a></p1>
+</div>
+
+<div class="container">
+  <div class="dashboard-title">
+    Dashboard Overview
+  </div>
+
+  <form class="search-form" action="/get-movies-by-actor" method="POST">
+    <label for="actorName">Enter an Actor name to get movies </label>
+    <input type="text" id="actorName" name="actorName">
+    <button type="submit">Search Movies</button>
+  </form>
+<div class="app-description">
+  <p>This is your personalized dashboard. You can search for movies by entering an actor's name using the search form above. </p>
+</div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login to Movie Database</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            color: white;    
+        }
+
+        h1 {
+            text-align: center;
+            top: 0 auto;
+            padding: 20px;
+            background-color: #000000;
+            border-radius: 5px;
+        }
+
+        form {
+            width: 25%;
+            margin-left: 33%;
+            margin-top: 50px;
+            padding: 50px;
+            background-color: #2d2d2d;
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+        }
+        .background-photo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    input[type="email"],
+        input[type="password"] {
+            width: 98%;
+            padding: 14px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        button[type="submit"] {
+            background-color: #525252;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #b6b7b6;
+        }
+
+        .container {
+            max-width:98%;
+            
+            padding: 5px;
+            background-color: #2d2d2d;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 10px;
+            opacity: 0.7;
+        }
+
+        p {
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Starflicks</h1>
+    <img class="background-photo" src="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1779&q=80" alt="Background Photo">
+    <div class="container">
+        
+            <h2>Hello user!</h2>
+            <p>You can search for your favorite actor's movies on this website. Our database is filled with a vast collection of movies, making it easier than ever to explore and discover films starring your favorite actors.</p>
+        </div>
+        <form action="/login" method="post">
+            <h2>Login to Starflicks </h2>
+            <input type="email" name="loginEmail" placeholder="Email" required>
+            <input type="password" name="loginPassword" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+            <% if(typeof errorMessage !== 'undefined') { %>
+                <div class="error-message"><%= errorMessage %></div>
+                <% } %>
+        </form>
+    <script src="app.js"></script>
+</body>
+</html>

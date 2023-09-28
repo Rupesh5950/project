@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebrity Movies</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color:  #dddddd;
+    margin: 0;
+    padding: 0;
+   
+  }
+
+  h1 {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    border-radius: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    background-color: hsl(0, 0%, 80%);
+    opacity: 2;
+    margin: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  li:hover {
+    transform: scale(1.05); 
+  }
+  
+  h2 {
+    color: #000000;
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  p {
+    margin: 5px 0;
+    color: #010101;
+  }
+  </style>
+</head>
+<body>
+  <h1>Movies featuring <%= actorName %></h1>
+
+  <% if (movies && movies.length > 0) { %>
+    <ul>
+      <% movies.forEach(function(movie) { %>
+        <li>
+          <div class="movie-details">
+            <h2><%= movie.title %></h2>
+            <p>Character: <%= movie.character %></p>
+            <p>Language: <%= movie.original_language %></p>
+            <p>Original Title: <%= movie.original_title %></p>
+            <p>Release Date: <%= movie.release_date %></p>
+            <p>Overview: <%= movie.overview %></p>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>No movies found for the actor.</p>
+  <% } %>
+</body>
+</html>
